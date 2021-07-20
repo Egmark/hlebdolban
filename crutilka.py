@@ -64,8 +64,8 @@ x = 0
 sec = 1
 
 
-def timing():
-    ls = [i for i in range(100, 0)]
+# def timing():
+#     ls = [i for i in range(100, 0)]
 
 
 while True:

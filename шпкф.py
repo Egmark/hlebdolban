@@ -1,5 +1,6 @@
 import random
 import pygame
+import  time
 l=1
 
 
@@ -92,7 +93,7 @@ pygame.display.flip()
 
 def crutilka(x):
     sec = 0
-    x -= 10
+
     sec += 1
     pygame.draw.polygon(screen, (255, 25, 0), ((100, 0), (800 // 2, 0), (150, 300)))
     for i in range(96):
@@ -132,7 +133,7 @@ sec = 0
 menu1 = True
 while True:
 
-    x -= 10
+
     pos = pygame.mouse.get_pos()
 
     #screen.blit(stena, (0, 0))
@@ -168,12 +169,15 @@ while True:
 
     if crut:
         sec += l
+        x -= 10
+
         screen.fill((0, 0, 0))
         print(sec)
         crutilka(x)
         if sec > 980:
+            time.sleep(5)
             crut = False
-            l=0
+            l=1
 
     pygame.time.delay(int(round(sec * 0.0)))
     pygame.display.flip()
