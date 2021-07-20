@@ -16,35 +16,46 @@ voy = pygame.transform.scale(voy, (100, 50))
 neonr = pygame.image.load("s799.png")
 neonr = pygame.transform.scale(neonr, (100, 50))
 kill = pygame.image.load("image6.png")
-kill = pygame.transform.scale(kill, (600, 400))
+kill = pygame.transform.scale(kill, (100, 50))
 vopr = pygame.image.load("kartinki-znak-voprosa-4.jpg")
 vopr = pygame.transform.scale(vopr, (600, 400))
-
-gun_list = [voy,directiva,neonr]
+digl=pygame.image.load("дигл.png")
+digl=pygame.transform.scale(digl,(100,50))
+dig=pygame.image.load("ud1.png")
+dig=pygame.transform.scale(digl,(100,50))
+gun_list = [dragonlore,voy,directiva,neonr,kill,digl,dig]
 t=dragonlore
 t2=random.choice(gun_list)
 t1=random.choice(gun_list)
 t3=random.choice(gun_list)
-if t==dragonlore:
-    o=1
-if t2==dragonlore and o==1:
-    t2=neonr
-if t3==directiva:
-    t3==voy
-if  t3==neonr:
-    t3=directiva
 
+random_gun = [dragonlore for _ in range(5)]
+random_gun += [voy for _ in range(10)]
+random_gun += [directiva for _ in range(20)]
+random_gun += [kill for _ in range(20)]
+random_gun += [neonr for _ in range(10)]
+random_gun += [digl for _ in range(20)]
+random_gun += [dig for _ in range(25)]
+random.shuffle(random_gun)
+
+
+print(random_gun)
 
 def crutilka(x):
-    for i in range(100):
+    for i in range(96):
         pygame.draw.rect(screen, (200, 200, 200), (x + 600 * i, 300, 100, 50))
         pygame.draw.rect(screen, (200, 200, 200), (x + 600 * i + 150, 300, 100, 50))
         pygame.draw.rect(screen, (200, 200, 200), (x + 600 * i + 300, 300, 100, 50))
         pygame.draw.rect(screen, (200, 200, 200), (x + 600 * i + 450, 300, 100, 50))
-        screen.blit(t3,(x + 600 * i, 300, 100, 50))
-        screen.blit(t,(x + 600 * i + 150, 300, 100, 50))
-        screen.blit(t1,(x + 600 * i + 300, 300, 100, 50))
-        screen.blit(t2,(x + 600 * i + 450, 300, 100, 50))
+        pygame.draw.rect(screen, (200, 200, 200), (x + 600 * i + 600, 300, 100, 50))
+        pygame.draw.rect(screen, (200, 200, 200), (x + 600 * i + 750, 300, 100, 50))
+        screen.blit(random_gun[i],(x + 600 * i, 300, 100, 50))
+        screen.blit(random_gun[i+1],(x + 600 * i + 150, 300, 100, 50))
+        screen.blit(random_gun[i+2],(x + 600 * i + 300, 300, 100, 50))
+        screen.blit(random_gun[i+3],(x + 600 * i + 450, 300, 100, 50))
+        screen.blit(random_gun[i+4],(x + 600 * i + 600, 300, 100, 50))
+        screen.blit(random_gun[i + 5], (x + 600 * i + 750, 300, 100, 50))
+
 
 
 
