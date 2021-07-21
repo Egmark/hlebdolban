@@ -11,7 +11,7 @@ dlor = "AWP | История о драконе"
 neonrevolution = "AK-47 | Неоновая революция"
 buzzkill = "USP-S | Подтвержденное убийство"
 sound = pygame.mixer.Sound("Electroman.wav")
-sound.set_volume(1)
+sound.set_volume()
 # screen = pygame.display.set_mode((800, 600))
 menu = pygame.image.load("pop.png")
 menu = pygame.transform.scale(menu, (800, 600))
